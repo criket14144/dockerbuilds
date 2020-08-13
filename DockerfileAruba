@@ -16,7 +16,7 @@ apt install -y synaptic && \
 apt install -y bc && \
 apt install -y lsb-release
 
-RUN apt-get install -y software-properties-common \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq software-properties-common \
 net-tools \
 dos2unix \
 tshark  \
