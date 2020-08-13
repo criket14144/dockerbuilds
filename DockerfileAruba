@@ -3,6 +3,7 @@ FROM ubuntu
 MAINTAINER nobody
 
 MAINTAINER nobody
+
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -15,14 +16,14 @@ apt install -y synaptic && \
 apt install -y bc && \
 apt install -y lsb-release && \
 apt-get install -y software-properties-common && \
-apt-get -y install net-tools && \
-apt-get -y install dos2unix && \
-apt-get -y install tshark && \
-apt-get -y install apache2 && \
-apt-get -y install tftpd-hpa && \
-apt-get -y install mysql-server && \
-apt-get -y install mysql-client && \
-apt-get -y install python3-pip && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 net-tools &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 dos2unix &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 tshark &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 apache2 &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 tftpd-hpa &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 mysql-server &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 mysql-client &> /dev/null) && \
+apt-get -y -qq -o=Dpkg::Use-Pty=0 python3-pip &> /dev/null) && \
 apt-get install wget && \
 pip3 install requests && \
 pip3 install pygal && \
@@ -48,3 +49,20 @@ RUN service mysql stop
 RUN usermod -d /var/lib/mysql/ mysql
 RUN service mysql start
 RUN /var/www/html/./startapp.sh
+
+
+
+
+pip3 install pygal && \
+pip3 install flask && \
+pip3 install flask-bootstrap && \
+pip3 install flask-login && \
+pip3 install pycryptodome && \
+pip3 install pymysql && \
+pip3 install schedule && \
+pip3 install pyshark && \
+pip3 install psutil && \
+pip3 install paramiko && \
+pip3 install netmiko && \
+pip3 install waitress && \
+pip3 install websockets
