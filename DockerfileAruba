@@ -14,18 +14,20 @@ apt install -y git && \
 apt install -y aptitude && \
 apt install -y synaptic && \
 apt install -y bc && \
-apt install -y lsb-release && \
-apt-get install -y software-properties-common && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 net-tools &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 dos2unix &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 tshark &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 apache2 &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 tftpd-hpa &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 mysql-server &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 mysql-client &> /dev/null && \
-apt-get install -y -qq -o=Dpkg::Use-Pty=0 python3-pip &> /dev/null && \
-apt-get install -y wget && \
-pip3 install requests && \
+apt install -y lsb-release
+
+RUN apt-get install -y software-properties-common && \
+apt-get install -y -qq net-tools &> /dev/null && \
+apt-get install -y -qq dos2unix &> /dev/null && \
+apt-get install -y -qq tshark &> /dev/null && \
+apt-get install -y -qq apache2 &> /dev/null && \
+apt-get install -y -qq tftpd-hpa &> /dev/null && \
+apt-get install -y -qq mysql-server &> /dev/null && \
+apt-get install -y -qq mysql-client &> /dev/null && \
+apt-get install -y -qq python3-pip &> /dev/null && \
+apt-get install -y wget
+
+RUN pip3 install requests && \
 pip3 install pygal && \
 pip3 install flask && \
 pip3 install flask-bootstrap && \
