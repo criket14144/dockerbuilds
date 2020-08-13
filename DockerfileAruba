@@ -16,15 +16,15 @@ apt install -y synaptic && \
 apt install -y bc && \
 apt install -y lsb-release && \
 apt-get install -y software-properties-common && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 net-tools &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 dos2unix &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 tshark &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 apache2 &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 tftpd-hpa &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 mysql-server &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 mysql-client &> /dev/null) && \
-apt-get -y -qq -o=Dpkg::Use-Pty=0 python3-pip &> /dev/null) && \
-apt-get install wget && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 net-tools &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 dos2unix &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 tshark &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 apache2 &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 tftpd-hpa &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 mysql-server &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 mysql-client &> /dev/null) && \
+apt-get install -y -qq -o=Dpkg::Use-Pty=0 python3-pip &> /dev/null) && \
+apt-get install -y wget && \
 pip3 install requests && \
 pip3 install pygal && \
 pip3 install flask && \
