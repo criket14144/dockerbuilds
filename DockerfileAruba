@@ -44,7 +44,7 @@ pip3 install websockets
 
 # Installing Aruba Flask 
 
-RUN git clone https://github.com/HewlettPackard/Aruba-FlaskwithNetworking.git
+RUN git clone https://github.com/criket14144/Aruba-FlaskwithNetworking.git
 RUN chmod +x ./Aruba-FlaskwithNetworking/install.sh
 RUN /bin/bash -c /Aruba-FlaskwithNetworking/./install.sh
 RUN service mysql stop
