@@ -9,7 +9,8 @@ apt install -y aptitude && \
 apt install -y synaptic && \
 apt install -y bc && \
 apt install -y lsb-release && \
-apt-get install -y software-properties-common
+apt-get install -y software-properties-common && \
+apt-get install wget
 RUN git clone https://github.com/HewlettPackard/Aruba-FlaskwithNetworking.git
 RUN chmod +x ./Aruba-FlaskwithNetworking/install.sh
 RUN /Aruba-FlaskwithNetworking/./install.sh
