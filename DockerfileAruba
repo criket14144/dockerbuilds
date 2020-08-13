@@ -16,16 +16,16 @@ apt install -y synaptic && \
 apt install -y bc && \
 apt install -y lsb-release
 
-RUN apt-get install -y software-properties-common && \
-apt-get install -y -qq net-tools &> /dev/null && \
-apt-get install -y -qq dos2unix &> /dev/null && \
-apt-get install -y -qq tshark &> /dev/null && \
-apt-get install -y -qq apache2 &> /dev/null && \
-apt-get install -y -qq tftpd-hpa &> /dev/null && \
-apt-get install -y -qq mysql-server &> /dev/null && \
-apt-get install -y -qq mysql-client &> /dev/null && \
-apt-get install -y -qq python3-pip &> /dev/null && \
-apt-get install -y wget
+RUN apt-get install -y software-properties-common \
+net-tools \
+dos2unix \
+tshark  \
+apache2  \
+tftpd-hpa  \
+mysql-server  \
+mysql-client  \
+python3-pip  \
+wget
 
 RUN pip3 install requests && \
 pip3 install pygal && \
