@@ -12,6 +12,7 @@ apt install -y lsb-release && \
 apt-get install -y software-properties-common
 RUN git clone https://github.com/HewlettPackard/Aruba-FlaskwithNetworking.git
 RUN chmod +x ./Aruba-FlaskwithNetworking/install.sh
+RUN /Aruba-FlaskwithNetworking/./install.sh
 RUN service mysql stop
 RUN usermod -d /var/lib/mysql/ mysql
 RUN service mysql start
