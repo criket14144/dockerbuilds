@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER nobody
 
-MAINTAINER nobody
+# Setting Time
 
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -27,6 +27,8 @@ mysql-client  \
 python3-pip  \
 wget
 
+# Installing Python Libraries
+
 RUN pip3 install requests && \
 pip3 install pygal && \
 pip3 install flask && \
@@ -42,12 +44,11 @@ pip3 install netmiko && \
 pip3 install waitress && \
 pip3 install websockets
 
-# Installing Aruba Flask 
+# Installing Aruba Flask
 
 RUN git clone https://github.com/criket14144/Aruba-FlaskwithNetworking.git
-CMD chmod +x ./Aruba-FlaskwithNetworking/install.sh
-CMD service mysql stop
-CMD usermod -d /var/lib/mysql/ mysql
-CMD service mysql start
-CMD /bin/bash -c /Aruba-FlaskwithNetworking/./install.sh
+RUN chmod +x ./Aruba-FlaskwithNetworking/install.sh
+RUN usermod -d /var/lib/mysql/ mysql
+RUN sleep 10
+RUN /bin/bash -c /Aruba-FlaskwithNetworking/./install.sh
 CMD /var/www/html/./startapp.sh
